@@ -11,10 +11,9 @@
             <div class="card-container" onclick="toggleCard(this);">
                 <div class="card">
                     <div class="side front">А</div>
-
                     <div class="side back">
                         <audio id="audio_1" src="/audio/letters/а/pronunciation.mp3"></audio>
-                        <span style="font-size: 30px;" class="audio-icon" onclick="toggleAudio(event);">🔊</span>
+                        <span id="span_1" style="font-size: 30px;" class="audio-icon" onclick="toggleAudio(this, event);">🔊</span>
                         <a class="button" href="letters/а/page.html">Ашу➡️</a>
                     </div>
                 </div>
@@ -166,9 +165,11 @@
     function toggleCard(container) {
         container.querySelector(".card").classList.toggle("flipped");
     }
-    function toggleAudio(event) {
+    function toggleAudio(span, event) {
+    var audio_order = "audio_" + span.id.split("_")[1]
+    console.log(audio_order);
     event.stopPropagation();
-    const audio = document.getElementById("audio_1");
+    const audio = document.getElementById(audio_order);
             if (audio.paused) {
                 audio.play();
             } else {
