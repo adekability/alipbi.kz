@@ -166,9 +166,8 @@
         container.querySelector(".card").classList.toggle("flipped");
     }
     function toggleAudio(span, event) {
-    var audio_order = "audio_" + span.id.split("_")[1]
-    console.log(audio_order);
     event.stopPropagation();
+    var audio_order = "audio_" + span.id.split("_")[1]
     const audio = document.getElementById(audio_order);
             if (audio.paused) {
                 audio.play();
