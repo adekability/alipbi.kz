@@ -3,6 +3,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/alipbi.css">
     <link rel="icon" href="images/alippe.ico">
+    <title>Әліпби</title>
 </head>
 <body>
 <table>
@@ -97,7 +98,16 @@
             </div>
         </td>
         <td>
-            <a href="letters/ё/page.html"><div style="height=100%; width=100%;">Ё</div></a>
+            <div class="card-container" onclick="toggleCard(this);">
+                <div class="card">
+                    <div class="side front">Ё</div>
+                    <div class="side back">
+                        <audio id="audio_9" src="/audio/letters/ё/pronunciation.mp3"></audio>
+                        <span id="span_9" style="font-size: 30px;" class="audio-icon" onclick="toggleAudio(this, event);">🔊</span>
+                        <a class="button" href="letters/ё/page.html">Ашу➡️</a>
+                    </div>
+                </div>
+            </div>
         </td>
         <td>
             <a href="letters/ж/page.html"><div style="height=100%; width=100%;">Ж</div></a>
