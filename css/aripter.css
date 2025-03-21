@@ -54,3 +54,38 @@ th{
 
 tr:nth-child(even){background-color: #f2f2f2;}
 tr:hover {background-color: #ddd;}
+
+audio {
+    width: 100%;
+    max-width: 300px; /* Adjust width as needed */
+    border-radius: 10px;
+    background: #f0f0f0;
+    padding: 0px;
+}
+
+/* Customizing the audio player controls (only works in some browsers) */
+audio::-webkit-media-controls-panel {
+    background-color: #ffccff;
+    border-radius: 10px;
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: #ffaa00;
+    border-radius: 50%;
+}
+
+audio::-webkit-media-controls-timeline {
+    color: #007bff;
+}
+
+.audio-sound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#listening-text {
+  position: absolute;
+  left: 0;
+}
