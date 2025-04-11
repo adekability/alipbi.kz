@@ -110,10 +110,12 @@ audio::-webkit-media-controls-timeline {
   color: black;
 }
 .header-row {
+  position: relative;  /* Enable positioning for child elements */
   display: flex;
   align-items: center;
-  justify-content: center;  /* This centers the items horizontally */
-  width: 100%;  /* Ensures the header takes up full width */
+  justify-content: center;
+  width: 100%;
+  padding: 10px 40px;  /* Some padding so the absolute elements don't hug the edge */
 }
 
 .header-row h1 {
@@ -124,4 +126,27 @@ audio::-webkit-media-controls-timeline {
 .header-row a {
   text-align: center;
   margin: 0 10px;  /* Optional: add spacing between the arrows and the title */
+}
+.header-row h1 {
+  margin: 0;
+  text-align: center;
+}
+
+.btn {
+  position: absolute;
+  left: 10px; /* Stick to the left side */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: #0044cc;
+  border-radius: 8px;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  width: auto;
+}
+
+.btn i {
+  margin-right: 5px;
 }
