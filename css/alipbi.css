@@ -67,3 +67,16 @@ a.button {
     background-color: buttonface;
     text-decoration: none;
 }
+.card-number {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222; /* Soft dark gray */
+    background-color: #dcdcdc; /* Smooth neutral tone */
+    padding: 4px 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
