@@ -61,12 +61,18 @@ audio {
     border-radius: 10px;
     background: #f0f0f0;
     padding: 0px;
+    color-scheme: light;
 }
 
 /* Customizing the audio player controls (only works in some browsers) */
 audio::-webkit-media-controls-panel {
     background-color: #ffccff;
     border-radius: 10px;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    display: none;
 }
 
 audio::-webkit-media-controls-play-button {
