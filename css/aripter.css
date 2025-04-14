@@ -36,9 +36,11 @@ h1 {
     width: 45%;
 }
 .examples {
-    margin-top: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     float: right;
-    width: 45%;
+    width: 50%;
     padding: 10px;
 }
 td{
@@ -57,11 +59,13 @@ tr:hover {background-color: #ddd;}
 
 audio {
     width: 100%;
-    max-width: 300px; /* Adjust width as needed */
+    max-width: 300px;
     border-radius: 10px;
-    background: #f0f0f0;
-    padding: 0px;
-    color-scheme: light;
+    background: transparent; /* Remove the default gray bg */
+    padding: 0;
+    margin: 0;
+    border: none; /* Optional: remove if you still want custom borders */
+    display: block;
 }
 
 /* Customizing the audio player controls (only works in some browsers) */
@@ -90,7 +94,9 @@ audio::-webkit-media-controls-timeline {
   align-items: center;
   position: relative;
 }
-
+.audio-sound audio {
+  margin-right: 280px; /* Try values like -20px, -30px, etc. */
+}
 #listening-text {
   position: absolute;
   left: 0;
