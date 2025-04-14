@@ -95,11 +95,11 @@ audio::-webkit-media-controls-timeline {
   position: relative;
 }
 .audio-sound audio {
-  margin-right: 280px; /* Try values like -20px, -30px, etc. */
+  margin-right: 290px; /* Try values like -20px, -30px, etc. */
 }
 #listening-text {
   position: absolute;
-  left: 0;
+  left: 5px;
 }
 .previous {
   background-color: #f1f1f1;
