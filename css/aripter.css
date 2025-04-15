@@ -101,6 +101,14 @@ audio::-webkit-media-controls-timeline {
   position: absolute;
   left: 5px;
 }
+.letter-description{
+  width: 350px;
+  float: right;
+}
+.letter-handwritten{
+  border: 1px solid blue;
+  width: 380px;
+}
 .previous {
   background-color: #f1f1f1;
   color: black;
