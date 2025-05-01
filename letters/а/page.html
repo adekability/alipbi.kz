@@ -21,6 +21,20 @@
 <div class="content">
     <div class="letter-section">
             <h2>«А» әрпі - қазақ әліпбиіндегі алғашқы әріп.</h2>
+        <div class="audio-sound">
+            <h3 id="listening-text">Естілуі</h3>
+            <audio controls controlsList="nodownload">
+                <source src="/audio/letters/а/pronunciation.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="letter-description">
+            <h3>«А» әрпімен басталатын сөздер</h3>
+            <p>Ата👴🏽 ана🤱🏻 адам👨🏻‍💼 арман💭 🎯 ашық🔓</p>
+
+            <h3><u>Ерекшелігі</u></h3>
+            <p>Бұл әріп ең көп қолданылатын әріптердің бірі.</p>
+        </div>
             <table>
                 <tr>
                     <th>
@@ -65,27 +79,63 @@
             </table>
     </div>
     <div class="examples">
-        <div style="display: inline-block; text-align: center;">
-            <h2 style="margin: 0 0 8px 0;">Жазылуы</h2>
-            <img src="/animated/letters/а/animated.gif" class="letter-handwritten">
-        </div>
-        <div class="letter-description">
-            <h3>«А» әрпімен басталатын сөздер</h3>
-            <p>Ата👴🏽 ана🤱🏻 адам👨🏻‍💼 арман💭 🎯 ашық🔓</p>
+      <div class="example-section">
+        <h2>Жазылуы</h2>
+        <img src="/animated/letters/а/animated.gif" class="letter-handwritten" alt="Letter animation">
+      </div>
 
-            <h3><u>Ерекшелігі</u></h3>
-            <p>Бұл әріп ең көп қолданылатын әріптердің бірі.</p>
+      <div class="example-section">
+        <h2>Жазып көр!</h2>
+        <div class="canvas-wrapper">
+          <canvas id="drawCanvas" width="500" height="300"></canvas>
         </div>
-        <br>
-        <br>
-        <div class="audio-sound">
-            <h3 id="listening-text">Естілуі</h3>
-            <audio controls controlsList="nodownload">
-                <source src="/audio/letters/а/pronunciation.mp3" type="audio/mp3">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
+        <button class="paint-button" onclick="clearCanvas()">Тазалау</button>
+      </div>
     </div>
+
 </div>
 </body>
+<script>
+    const canvas = document.getElementById('drawCanvas');
+const ctx = canvas.getContext('2d');
+let isDrawing = false;
+let lastX = 0;
+let lastY = 0;
+
+function getMousePos(canvas, evt) {
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+
+    return {
+        x: (evt.clientX - rect.left) * scaleX,
+        y: (evt.clientY - rect.top) * scaleY
+    };
+}
+
+canvas.addEventListener('mousedown', function(e) {
+    isDrawing = true;
+    const pos = getMousePos(canvas, e);
+    lastX = pos.x;
+    lastY = pos.y;
+});
+
+canvas.addEventListener('mousemove', function(e) {
+    if (!isDrawing) return;
+    const pos = getMousePos(canvas, e);
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(pos.x, pos.y);
+    ctx.stroke();
+    lastX = pos.x;
+    lastY = pos.y;
+});
+
+canvas.addEventListener('mouseup', () => isDrawing = false);
+canvas.addEventListener('mouseout', () => isDrawing = false);
+function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+</script>
 </html>

@@ -32,18 +32,13 @@ h1 {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-
     float: left;
     width: 45%;
 }
-.examples {
-    border-radius: 8px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    float: right;
-    width: 50%;
-    padding: 10px;
+.letter-section audio {
+    margin-top: 15px;
 }
+
 td{
     text-align: center;
 }
@@ -58,13 +53,13 @@ th{
 tr:nth-child(even){background-color: #f2f2f2;}
 tr:hover {background-color: #ddd;}
 
+
 audio {
     width: 100%;
     max-width: 300px;
     border-radius: 10px;
     background: transparent; /* Remove the default gray bg */
     padding: 0;
-    margin: 0;
     border: none; /* Optional: remove if you still want custom borders */
     display: block;
 }
@@ -90,26 +85,30 @@ audio::-webkit-media-controls-timeline {
 }
 
 .audio-sound {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+    justify-content: center;
+    position: relative;
+    display: inline-block;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
 }
 .audio-sound audio {
-  margin-right: 290px; /* Try values like -20px, -30px, etc. */
+    width: 300px;  /* немесе өзіңізге керекті ені */
 }
+.audio-sound h3 {
+    text-align: center;  /* немесе өзіңізге керекті ені */
+}
+
 #listening-text {
-  position: absolute;
-  left: 5px;
+    position: static; /* absolute орнына static қоямыз */
+    margin-bottom: 5px; /* қажет болса, төменгі margin қосамыз */
 }
+
 .letter-description{
   width: 350px;
   float: right;
 }
-.letter-handwritten{
-  border: 1px solid blue;
-  width: 380px;
-}
+
 .previous {
   background-color: #f1f1f1;
   color: black;
@@ -171,3 +170,91 @@ audio::-webkit-media-controls-timeline {
 .btn i {
   margin-right: 5px;
 }
+.examples {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1rem; /* қашықтықты азайттық */
+    padding: 1rem;
+    flex-wrap: nowrap; /* wrap-ты алып тастадық */
+}
+
+.example-section {
+    flex: 0 1 auto; /* flex параметрлерін өзгерттік */
+    min-width: 0; /* min-width алып тастадық */
+    max-width: 400px; /* максималды енін азайттық */
+    width: 400px; /* нақты ен қостық */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.example-section h2 {
+    margin-bottom: 1rem;
+    color: #333;
+    /* Қосымша стильдер */
+    height: 50px; /* Тақырыптарға бірдей биіктік береміз */
+    display: flex;
+    align-items: center;
+}
+
+.letter-handwritten {
+    width: 350px; /* GIF енін азайттық */
+    height: 250px; /* GIF биіктігін азайттық */
+    object-fit: contain;
+
+}
+
+
+.canvas-wrapper {
+    position: relative;
+    height: 250px; /* биіктікті азайттық */
+    width: 350px; /* енін азайттық */
+
+    object-fit: contain;
+    border: 2px solid #ccc;
+    background-image: url('/animated/letters/а/background-handwriting.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 300px;
+  cursor: crosshair;
+}
+
+.paint-button {
+  margin-top: 15px;
+  padding: 12px 25px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.paint-button:hover {
+  background-color: #0056b3;
+}
+#drawCanvas {
+    width: 350px; /* canvas енін азайттық */
+    height: 250px; /* canvas биіктігін азайттық */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
